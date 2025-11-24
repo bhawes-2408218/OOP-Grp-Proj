@@ -18,5 +18,5 @@ std::string getDescription() const {return description}
 
 void setPermission(const std::string& perm) {permission = perm }
 void setDescription(const std::string& desc) {description = desc}
-;
+};
 
