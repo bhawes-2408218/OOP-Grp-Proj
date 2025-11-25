@@ -3,11 +3,12 @@
 #include <string>
 #include "Analytics.h"
 #include"Metrics.h"
+using namespace std;
 
 class Analytics {
 private:
     Metrics metrics;
-    std::vector<std::string> observations;
+    vector<string> observations;
 
 public:
     Analytics() = default;
@@ -28,13 +29,13 @@ public:
 
     void generateWeeklyReport() {
         trackHospitalPerformance();
-        std::cout << "----- Weekly Hospital Report -----\n";
-        std::cout << "Total Appointments: " << metrics.getTotalAppts() << "\n";
-        std::cout << "Conflicts: " << metrics.getTotalConflicts() << "\n";
-        std::cout << "High Risk Patients: " << metrics.getHighRiskPats() << "\n";
-        std::cout << "Avg Response Time: " << metrics.getAvgRespTime() << " mins\n\n";
-        std::cout << "Observations:\n";
+        cout << "----- Weekly Hospital Report -----\n";
+        cout << "Total Appointments: " << metrics.getTotalAppts() << "\n";
+        cout << "Conflicts: " << metrics.getTotalConflicts() << "\n";
+        cout << "High Risk Patients: " << metrics.getHighRiskPats() << "\n";
+        cout << "Avg Response Time: " << metrics.getAvgRespTime() << " mins\n\n";
+        cout << "Observations:\n";
         for (const auto& o: observations) 
-            std::cout << "- " << o << "\n";
+            cout << "- " << o << "\n";
     }
 };
